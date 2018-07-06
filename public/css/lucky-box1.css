@@ -1,0 +1,135 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.lu-bg{
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	position: relative;
+	z-index: 1;
+}
+.lb-main{
+	position: absolute;
+	left: 0;
+	top: 8.8vh;
+	z-index: 100;
+}
+.lb-title{
+	width: 100%;
+	font-size: 0;
+	position: relative;
+	text-align: center;
+}
+.lb-t-main{
+	width: 73.6%;
+	position: relative;
+	z-index: 204;
+}
+.lb-font{
+	width: 73.6%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 205;
+	
+}
+.lu-bg1,
+.lu-bg2{
+	position: absolute;
+	top: 1vh;
+	z-index: 201;
+}
+.lu-bg1{
+	width: 40%;
+	left: 0;
+}
+.lu-bg2{
+	width: 30%;
+	right: 0;
+}
+.lb-body{
+	font-size: 0;
+	text-align: center;
+	position: relative;
+	z-index: 208;
+	margin-top: -4vh;
+}
+.lb-b-main{
+	width: 53.1%;
+	position: relative;
+	z-index: 210;
+}
+.lu-b-bg1,
+.lu-b-bg2{
+	position: absolute;
+	z-index: 209;
+	width: 23.7%;
+}
+.lu-b-bg1{
+	top: 43%;
+	left: 12.3%;
+}
+.lu-b-bg2{
+	top: 30%;
+	right: 12.3%;
+}
+.lb-b-main.select{
+	animation: myfirst .5s linear infinite;
+	-webkit-animation: myfirst .5s linear infinite;
+}
+@keyframes myfirst{
+	from{transform: rotateZ(0deg);}
+	25%{transform: rotateZ(-15deg);}
+	50%{transform: rotateZ(0deg)}
+	75%{transform: rotateZ(15deg)}
+	to{transform: rotateZ(0deg);}
+}
+.lb-b-bottom{
+	width: 100%;
+	z-index: 209;
+	margin-top: -4vh;
+}
+.lb-foot{
+	width: 75.7%;
+	margin: 0 auto;
+	position: relative;
+	z-index: 210;
+}
+.lb-f-btn{
+	width: 100%;
+	padding: 10px 0;
+	box-shadow: 0 2px 0 0 #DB3530;
+	border-radius: 4px;
+	background-image: linear-gradient(-180deg, #FAF050 0%, #FDD31E 100%);
+	font-size: .345rem;
+	color: #EC4453;
+	text-align: center;
+	font-weight: bold;
+}
+.lb-f-tip{
+	font-size: .2496rem;
+	color: #FFFFFF;
+	text-align: center;	
+	margin-top: 12px;
+}
+.active-detail{
+	position: fixed;
+	top: 70px;
+	right:12px ;
+	width: 11.5%;
+	z-index: 300;
+}
+.lb-bottom{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0,0,0,0.50);
+	color: #fff;
+	text-align: center;
+	font-size: .2688rem;
+	z-index: 300;
+	padding: 6px 0;
+}

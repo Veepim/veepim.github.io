@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../public/css/lucky-box1.css"/>
+		<script src="../public/js/font.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<section id="app">
+			<img src="../public/image/lucky-box/lu1-bg.png" class="lu-bg"/>
+			<section class="lb-main">
+				<section class="lb-title">
+					<img src="../public/image/lucky-box/lu1-tit-bg.png" class="lb-t-main"/>
+					<img src="../public/image/lucky-box/lu1-title.png" class="lb-font"/>
+					<img src="../public/image/lucky-box/lu1-k1.png" class="lu-bg1"/>
+					<img src="../public/image/lucky-box/lu1-k2.png" class="lu-bg2"/>
+				</section>
+				<section class="lb-body">
+					<img src="../public/image/lucky-box/lu1-box.png" class="lb-b-main" id="lu-box"/>
+					<img src="../public/image/lucky-box/lu1-bottom.png" class="lb-b-bottom"/>
+					<img src="../public/image/lucky-box/lu1-k1.png" class="lu-b-bg1"/>
+					<img src="../public/image/lucky-box/lu1-k2.png" class="lu-b-bg2"/>
+				</section>
+				<section class="lb-foot">
+					<section class="lb-f-btn">我也要发起抽奖</section>
+					<section class="lb-f-tip">已有4430人参与，您今天还有3次抽奖机会</section>
+				</section>
+			</section>
+			<img src="../public/image/lucky-box/lu1-active.png" class="active-detail"/>
+			<section class="lb-bottom">
+				页面技术由 活动聚 提供
+			</section>
+		</section>
+	</body>
+</html>
+<script type="text/javascript">
+	document.getElementById("lu-box").onclick=function(){
+		if(this.getAttribute("class") == "lb-b-main"){
+			this.setAttribute("class","lb-b-main select");
+		}else{
+			this.setAttribute("class","lb-b-main");
+		}
+	}
+</script>

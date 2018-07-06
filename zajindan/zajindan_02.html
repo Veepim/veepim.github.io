@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>砸金蛋2</title>
+		<link rel="stylesheet" href="../public/css/zajindan_02.css" />
+	</head>
+
+	<body>
+		<section class="zjd2-container" id="app">
+			<div class="zjd2-bg">
+				<div class="zjd2-decoration1">
+					<img src="../public/image/zajindan_02/goldenEgg-btn-20180702.png" />
+					<p>活动详情</p>
+				</div>
+				<div class="zjd2-decoration2">
+					<img src="../public/image/zajindan_02/goldenEgg-themeTitle-20180702.png" />
+					<div class="zjd2-decoration3">
+						<div class="zjd2-decoration3Left">
+							<img src="../public/image/zajindan_02/goldenEgg-left-20180702.png" />
+						</div>
+						<p>已有<span>2315</span>人参与，您今天还有<span>{{lotteryNum}}</span>次抽奖机会</p>
+						<div class="zjd2-decoration3Right">
+							<img src="../public/image/zajindan_02/goldenEgg-right-20180702.png" />
+						</div>
+					</div>
+				</div>
+				<div v-show="isBrokenEgg" class="zjd2-decoration4BrokenEggShell">
+					<img src="../public/image/zajindan_02/goldenEgg-egg3-20180702.png"></img>
+				</div>
+				<div class="zjd2-decoration4">
+					<div v-show="isBrokenEgg" class="zjd2-decoration4BrokenEgg" />
+					<div class="zjd2-decoration4Flower">
+						<img src="../public/image/zajindan_02/goldenEgg-flower-20180702.png" />
+					</div>
+
+					<img src="../public/image/zajindan_02/goldenEgg-egg2-20180702.png">
+				</div>
+
+				<img src="../public/image/zajindan_02/goldenEgg-egg1-20180702.png" @click="hitEgg" v-bind:class="{'zjd2-decoration4Egg':isEggComplete, 'zjd2-decoration4EggAfter': isEggBroken}" v-show="isAllEgg" />
+				<div class="zjd2-decoration4Hammer" :class="{'zjd2-decoration4Hammer':isHammerBegin,'zjd2-decoration4HammerAfter':isHammerOver}">
+					<img src="../public/image/zajindan_02/goldenEgg-hammer-20180702.png" />
+				</div>
+				<div class="zjd2-decoration4EggShadow">
+					<img src="../public/image/zajindan_02/goldenEgg-egg-shadow-20180702.png" />
+				</div>
+			</div>
+			<div class="zjd2-decoration5">
+				<img src="../public/image/zajindan_02/goldenEgg-base-20180702.png" />
+				<button class="zjd2-inviteBtn">我要创建活动</button>
+			</div>
+			<div class="zjd2-footer">
+				<p>页面技术由&ensp;活动运营助手&ensp;提供</p>
+			</div>
+			</div>
+		</section>
+	</body>
+	<script type="text/javascript" src="../public/plugin/vue.min.js"></script>
+	<script>
+		new Vue({
+			el: "#app",
+			data: {
+				isEggComplete: true,
+				isEggBroken: false,
+				isHammerBegin: true,
+				isHammerOver: false,
+				isAllEgg: true,
+				isBrokenEgg: false,
+				lotteryNum: 3,
+			},
+			mounted() {
+
+			},
+			methods: {
+				hitEgg() {
+					this.checkLotteryNum();
+					this.isEggComplete = false;
+					this.isEggBroken = true;
+					this.isHammerBegin = false;
+					this.isHammerOver = true;
+					setTimeout(this.eggBroken, 1500);
+				},
+				eggBroken() {
+					this.isAllEgg = false;
+					this.isBrokenEgg = true;
+				},
+				checkLotteryNum() {
+					if(this.lotteryNum <= 0) {
+						this.lotteryNum = 0;
+						alert("您没有抽奖次数了~下次再来吧");
+
+					}
+					this.lotteryNum--;
+				},
+			},
+
+		})
+	</script>
+
+</html>

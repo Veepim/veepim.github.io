@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <title>活动助手-抽奖摇一摇</title>
+    <link rel="stylesheet" href="../public/css/public.css">
+    <link rel="stylesheet" href="../public/css/yaoyiyao_02.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="guaguale" class="container t_center">
+        <div>
+            <img style="width: 80%" src="../public/image/yaoyiyao_02/title.png" alt="">
+        </div>
+        <div class="t_white">
+            <p style="margin-top: 15px;" class="t_08rem">已有
+                <span class="t_yellow">{{joinNum}}</span>
+                人参与</p>
+            <p class="t_08rem">您今天还有
+                <span class="t_yellow">{{chanceNum}}</span>
+                次抽奖机会</p>
+        </div>
+        <div class="phone_box">
+            <img v-bind:class="{anim_shake: animStart}" class="left_icon pos_abs" src="../public/image/yaoyiyao_02/left.png" alt="">
+            <img v-bind:class="{anim_shake: animStart}" class="right_icon pos_abs" src="../public/image/yaoyiyao_02/right.png" alt="">
+            <img v-bind:class="{anim_phone: animStart}" class="phone pos_abs" src="../public/image/yaoyiyao_02/phone.png" alt="">
+            <img class="circle pos_abs" src="../public/image/yaoyiyao_02/circle.png" alt="">
+        </div>
+        <div class="bottom_btn">
+            <button class="t_03rem">我要创建活动</button>
+        </div>
+
+        <footer>
+            <span>页面技术由活动聚提供</span>
+        </footer>
+    </div>
+
+
+<script src="../public/js/yaoyiyao.js"></script>
+<script src="../public/js/public.js"></script>
+    <script>
+        window.onhashchange = function () {
+            chouqian.start();
+        }
+    </script>
+</body>
+</html>

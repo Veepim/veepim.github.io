@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <title>活动助手-抽奖大转盘</title>
+    <link rel="stylesheet" href="../public/css/public.css">
+    <link rel="stylesheet" href="../public/css/guaguale_01.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../public/plugin/Scratch.js"></script>
+</head>
+<body>
+
+    <div id="guaguale" class="container">
+        <div class="top_btns">
+            <div>
+                <img class="size100" src="../public/image/guaguale_01/detail.png" alt="">
+            </div>
+        </div>
+        <div id="content" class="canvas_box">
+            <div id="canvas_size" class="size100">
+                <canvas id="guaguale_canvas" class="canvas">
+
+                </canvas>
+                <span id="aword_txt_span">{{awordTxt}}</span>
+            </div>
+        </div>
+        <div class="bottom_btns t_center">
+            <button onclick="goHome()">我也要发起抽奖</button>
+            <div>
+                <p>已有{{joinNum}}人参与,您今天还有{{chanceNum}}次抽奖机会</p>
+            </div>
+        </div>
+        <footer class="t_center">
+            <span>页面技术由活动聚提供</span>
+        </footer>
+    </div>
+
+
+<script src="../public/js/guaguale.js"></script>
+<script src="../public/js/public.js"></script>
+<script>
+
+    window.onload = function () {
+        calcRem();
+        let canvasBox = document.getElementById('canvas_size');
+        let isOver = false;
+        canvasBox.style.color = 'red'; //中奖结果字体显示出来，放置canvas渲染前出现
+
+        var scratch = new Scratch({
+            canvasId: 'guaguale_canvas',
+//            imageBackground: 'image/detail.png',
+            pictureOver: '../public/image/guaguale_01/mask.png',
+            radius: 15,
+            nPoints: 300,
+            percent: 50,
+            sceneWidth: canvasBox.clientWidth, // Canvas width
+            sceneHeight: canvasBox.clientHeight, // Canvas height
+            maskImgWidth: canvasBox.clientWidth, //canvas drawImage()所画的图片大小
+            maskImgHeight: canvasBox.clientHeight, //canvas drawImage()所画的图片大小
+            callback: function () {
+                if(isOver)return;
+                isOver = true;
+                wx.miniProgram.postMessage({ data: 'foo' })
+                alert('很遗憾，未中奖');
+            },
+            pointSize: { x: 3, y: 3}
+        });
+    };
+
+
+</script>
+</body>
+</html>

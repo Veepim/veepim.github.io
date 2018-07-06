@@ -1,0 +1,141 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.sudoku{
+	width: 100%;
+	height: 100%;
+}
+.su-bg{
+	position: relative;
+	z-index: 1;
+	width: 100vw;
+	height: 100vh;
+	display: block;
+}
+.su-main{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	width: 100vw;
+	height: 100vh;
+}
+
+.su-m-title{
+	position: relative;
+	width: 91.5%;
+	margin: 8.8vh auto 0;
+	font-size: 0;
+}
+.su-m-title img{
+	width: 100%;
+}
+.su-m-title section{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 5.3vw;
+	color: #6F200F;
+	width: 60vw;
+	z-index: 4;
+}
+
+.su-m-cont{
+	width: 91.5%;
+	margin: 3vh auto 0;
+	background-color: #ffba00;
+	border-radius: 8px;
+	box-sizing: border-box;
+	font-size: 0;
+	position: relative;
+}
+.su-m-cont>img{
+	width: 100%;
+}
+.su-mc-cj{
+	position: absolute;
+	left: 15px;
+	top: 15px;
+	width: calc(100% - 30px);
+	height: calc(100% - 30px);
+}
+.su-mc-cj ul{
+	height: 100%;
+	background-color: red;
+	border-radius: 10px;
+	
+}
+.su-mc-cj li{
+	display: inline-block;
+	width: 31%;
+	position: relative;
+	margin: 1.75% 0 0 1.75%;
+}
+.su-mc-cj li>img{
+	width: 100%;
+}
+.su-mcc-cont{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding-top: 10px;
+}
+.su-mcc-cont>img{
+	width: 50%;
+}
+.su-mcc-cont>p{
+	font-size: 3.7vw;
+	color: #6F210F;
+}
+.su-m-foot{
+	margin-top: 52px;
+	position: relative;
+}
+.su-mf-number{
+	font-size: .3072rem;
+	color: #fff;
+	text-align: center;
+}
+.su-mf-number strong{
+	border: 1px solid #E64324;
+	color: #FEE600;
+	letter-spacing: 0;
+	text-shadow: 0 2px 4px rgba(73,73,73,0.50);
+	margin: 0 5px 0 5px;
+}
+.su-mf-btn{
+	width: 68.3%;
+	margin: 25px auto 0;
+	padding: 10px 0;
+	box-shadow: 0 2px 0 0 #DB3530;
+	border-radius: 45px;
+	background-image: linear-gradient(-180deg, #FAF050 0%, #FDD31E 100%);
+	font-size: .345rem;
+	color: #EC4453;
+	text-align: center;
+	/*font-weight: bold;*/
+}
+.su-mf-detail{
+	position: absolute;
+	right: 4.3%;
+	top: 0;
+	width: 10.4%;
+}
+.lb-bottom{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0,0,0,0.50);
+	color: #fff;
+	text-align: center;
+	font-size: .2688rem;
+	z-index: 300;
+	padding: 6px 0;
+	opacity: 0.5;
+}

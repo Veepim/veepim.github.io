@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../public/css/lucky-box2.css"/>
+		<script src="../public/js/font.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<section id="app">
+			<img src="../public/image/lucky-box/lu2-bg.png" class="lu-bg"/>
+			<section class="lu-main">
+				<section class="lu-m-title">
+					<img src="../public/image/lucky-box/lu2-title.png"/>
+					<section>活动详情</section>
+				</section>
+				<section class="lu-m-body">
+					<img src="../public/image/lucky-box/lu2-box.png" class="lu-mb-main" id="lu-mb-main"/>
+					<img src="../public/image/lucky-box/lu2-bottom.png" class="lu-mb-bg"/>
+					<section class="lu-mb-cont">
+						<section>已有<strong>2315</strong>人参与</section>
+						<section>您今天还有<strong>3</strong>次抽奖机会</section>
+					</section>
+				</section>
+				<section class="lu-m-foot">
+					我要创建活动
+				</section>
+			</section>
+			<section class="lb-bottom">
+				页面技术由 活动聚 提供
+			</section>
+		</section>
+	</body>
+</html>
+<script type="text/javascript">
+	document.getElementById("lu-mb-main").onclick=function(){
+		if(this.getAttribute("class") == "lu-mb-main"){
+			this.setAttribute("class","lu-mb-main select");
+		}else{
+			this.setAttribute("class","lu-mb-main");
+		}
+	}
+</script>

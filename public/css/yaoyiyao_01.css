@@ -1,0 +1,148 @@
+.container{
+    background-image: url("../image/yaoyiyao_01/background.png");
+    background-size: 100% 100%;
+    padding-top: 20% !important;
+}
+.title_img>img{
+    width: 75%;
+}
+.bottom_banner{
+    position: absolute;
+    width: 100%;
+    bottom: 2rem;
+    z-index: 120;
+}
+.qian_box{
+    width: 3rem;
+    height: 6rem;
+    position: absolute;
+    bottom: 2.6rem;
+}
+.qiantong{
+    position: relative;
+}
+.qiantong>.qian_bg{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 99;
+}
+.qiantong>.qian_a{
+    width: 100%;
+    position: absolute;
+    top: 1.4rem;
+    z-index: 1;
+}
+.qiantong>.qian_img{
+    width: 1rem;
+    z-index: 2;
+    position: absolute;
+    transform-origin: 50% 90%;
+}
+.qian_01{
+    left: 15%;
+    top: .5rem;
+    transform: rotate(-6deg);
+}
+.qian_02{
+    left: 10%;
+    z-index: 6 !important;
+    top: -0.6rem;
+    transform: rotate(10deg);
+}
+.qian_03{
+    left: 45%;
+    z-index: 8 !important;
+    transform: rotate(-3deg);
+}
+.qian_04{
+    left: 45%;
+    z-index: 10 !important;
+    transform: rotate(18deg);
+    top: .3rem;
+}
+.qian_05{
+    right: 45%;
+    z-index: 6 !important;
+}
+.qian_06{
+    right: 45%;
+    top: -0.6rem;
+    z-index: 6 !important;
+    transform: rotate(25deg);
+}
+.anim_chouqian{
+    animation: chouqian .5s linear 5;
+    transform-origin: 50% 90%;
+}
+.anim_chouqian2{
+    animation: chouqian .5s linear 5;
+}
+@keyframes chouqian {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(13deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-13deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes chouqian2 {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(5deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-2deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.bottom_box{
+    position: absolute;
+    width: 100%;
+    bottom: .4rem;
+}
+.bottom_box>p{
+    color: #FB564C;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+footer{
+    top: 0 !important;
+}
+.bottom_btns>button{
+    width: 35%;
+    height: 35px;
+    border-radius: 2px;
+    background-color: #FB564C;
+    color: white;
+    font-size: .28rem;
+}
+.bottom_btns>.detail_btn{
+    background-color: transparent;
+    border: 1px solid #FB564C;
+    color: #FB564C;
+}
+
+
+
+
+
+

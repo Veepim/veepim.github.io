@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <title>活动助手-刮刮乐</title>
+    <link rel="stylesheet" href="../public/css/public.css">
+    <link rel="stylesheet" href="../public/css/guaguale_02.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../public/plugin/Scratch.js"></script>
+</head>
+<body>
+
+    <div id="guaguale" class="container">
+        <div id="content" class="canvas_box">
+            <div id="canvas_size" class="size100">
+                <canvas id="guaguale_canvas" class="canvas">
+
+                </canvas>
+                <span id="aword_txt_span">{{awordTxt}}</span>
+            </div>
+        </div>
+
+        <div class="bottom_btns t_center">
+            <div>
+                <button>活动详情</button>
+                <button>我要创建活动</button>
+            </div>
+            <div style="color: #A11D02;">
+                <p class="t_08rem">已有
+                    <span style="color: #9439F3;">{{joinNum}}</span>
+                    人参与</p>
+                <p class="t_08rem">您今天还有
+                    <span style="color: #9439F3;">{{chanceNum}}</span>
+                    次抽奖机会</p>
+            </div>
+        </div>
+        <footer class="t_center">
+            <span>页面技术由活动聚提供</span>
+        </footer>
+    </div>
+
+
+<script src="../public/js/guaguale.js"></script>
+<script src="../public/js/public.js"></script>
+<script>
+
+    window.onload = function () {
+        calcRem();
+        let canvasBox = document.getElementById('canvas_size');
+        let isOver = false;
+
+        setTimeout(function () {
+            canvasBox.style.color = 'red'; //中奖结果字体显示出来，放置canvas渲染前出现
+        },1000);
+
+        var scratch = new Scratch({
+            canvasId: 'guaguale_canvas',
+//            imageBackground: 'image/detail.png',
+            pictureOver: '../public/image/guaguale_02/mask.png',
+            radius: 15,
+            nPoints: 300,
+            percent: 50,
+            sceneWidth: canvasBox.clientWidth, // Canvas width
+            sceneHeight: canvasBox.clientHeight, // Canvas height
+            maskImgWidth: canvasBox.clientWidth, //canvas drawImage()所画的图片大小
+            maskImgHeight: canvasBox.clientHeight, //canvas drawImage()所画的图片大小
+            callback: function () {
+                if(isOver)return;
+                isOver = true;
+                wx.miniProgram.postMessage({ data: 'foo' })
+                alert('很遗憾，未中奖');
+            },
+            pointSize: { x: 3, y: 3}
+        });
+    };
+
+
+</script>
+</body>
+</html>

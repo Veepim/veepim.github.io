@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <title>活动助手-抽奖摇一摇</title>
+    <link rel="stylesheet" href="../public/css/public.css">
+    <link rel="stylesheet" href="../public/css/yaoyiyao_01.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="guaguale" class="container">
+        <div class="title_img t_center">
+            <img src="../public/image/yaoyiyao_01/title.png" alt="">
+        </div>
+        <div class="qian_box">
+            <div :class="{ anim_chouqian: animStart}" class="size100 qiantong">
+                <img @click="start" class="qian_bg" src="../public/image/yaoyiyao_01/qiantong_b.png" alt="">
+                <img class="qian_a" src="../public/image/yaoyiyao_01/qiantong_a.png" alt="">
+                <!--签-->
+                <img :class="{ anim_chouqian2: animStart}" class="qian_img qian_01 " src="../public/image/yaoyiyao_01/qian.png" alt="">
+                <img class="qian_img qian_02 " src="../public/image/yaoyiyao_01/qian.png" alt="">
+                <img :class="{ anim_chouqian2: animStart}" class="qian_img qian_03 " src="../public/image/yaoyiyao_01/qian.png" alt="">
+                <img class="qian_img qian_04 " src="../public/image/yaoyiyao_01/qian.png" alt="">
+                <img class="qian_img qian_05 " src="../public/image/yaoyiyao_01/qian.png" alt="">
+                <img :class="{ anim_chouqian2: animStart}" class="qian_img qian_06 " src="../public/image/yaoyiyao_01/qian.png" alt="">
+            </div>
+        </div>
+        <div @click="start" class="title_img t_center bottom_banner">
+            <img src="../public/image/yaoyiyao_01/title_2.png" alt="">
+        </div>
+        <div class="t_center bottom_box">
+            <p>已有{{joinNum}}人参与,您今天还有{{chanceNum}}次抽奖机会</p>
+            <div class="bottom_btns">
+                <button class="detail_btn" onclick="goHome()">活动详情</button>
+                <button onclick="goHome()">发起抽奖</button>
+            </div>
+        </div>
+        <footer class="t_center">
+            <span>页面技术由活动聚提供</span>
+        </footer>
+    </div>
+
+
+<script src="../public/js/yaoyiyao.js"></script>
+<script src="../public/js/public.js"></script>
+<script>
+    window.onhashchange = function () {
+        chouqian.start();
+    }
+</script>
+</body>
+</html>

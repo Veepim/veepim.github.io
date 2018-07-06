@@ -2,9 +2,138 @@
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>活动助手</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        /*div{*/
+            /*width: 300px;*/
+            /*padding: 50px;*/
+            /*text-align: center;*/
+        /*}*/
+        /*button{*/
+            /*width: 200px;*/
+            /*height: 50px;*/
+            /*line-height: 50px;*/
+            /*border: 1px solid #DEDEDE;*/
+            /*border-radius: 3px;*/
+            /*background-color: transparent;*/
+            /*margin-bottom: 30px;*/
+            /*font-size: 16px;*/
+        /*}*/
+        /*a{*/
+            /*text-decoration-line: none;*/
+        /*}*/
+        /*iframe{*/
+            /*overflow: hidden !important;*/
+            /*border: 1px solid red;*/
+            /*width: 390px;*/
+            /*height: 680px;*/
+            /*position: fixed;*/
+            /*left: 400px;*/
+            /*top: 50px;*/
+        /*}*/
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        #box{
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: skyblue;
+            padding: 100px 200px;
+        }
+        #box>div{
+            width: 300px;
+            height: 560px;
+            border: 3px solid white;
+            position: relative;
+            margin: 20px 30px;
+        }
+        #box>div>iframe{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
-    <div>OMG ，怎么一直传不上去呢</div>
+    <!--<div id="app">-->
+        <!--<button data-src="zhuanpan_02/index.html">-->
+            <!--<span>大转盘</span>-->
+        <!--</button>-->
+        <!--<button data-src="guaguale_01/index.html">-->
+            <!--<span>刮刮乐</span>-->
+        <!--</button>-->
+        <!--<button data-src="yaoyiyao_01/index.html">-->
+            <!--<span>摇一摇</span>-->
+        <!--</button>-->
+    <!--</div>-->
+    <!--<iframe id="iframe" src="zhuanpan/zhuanpan_02.html" frameborder="0"></iframe>-->
+
+
+
+    <div id="box">
+        <div>
+            <iframe src="guaguale/guaguale_01.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="guaguale/guaguale_02.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="yaoyiyao/yaoyiyao_01.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="yaoyiyao/yaoyiyao_02.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="zhuanpan/zhuanpan_01.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="zhuanpan/zhuanpan_02.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="niudanji/niudanji_01.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="niudanji/niudanji_02.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="zajindan/zajindan_01.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="zajindan/zajindan_02.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="lucky-box/lucky-box1.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="lucky-box/luck-box2.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="sudoku/sudoku1.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe src="sudoku/sudoku2.html" frameborder="0"></iframe>
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+        $("#app>button").on('click',function () {
+           let _src = $(this).attr('data-src');
+           $("#iframe").attr('src', _src);
+        });
+
+    </script>
 </body>
 </html>

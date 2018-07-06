@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <title>活动助手-抽奖大转盘</title>
+    <link rel="stylesheet" href="../public/css/public.css">
+    <link rel="stylesheet" href="../public/css/zhuanpan_02.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../public/js/public.js"></script>
+    <style>
+        /**
+        注意：请勿添加其它样式代码到此处，func: setRotateDeg() 有调用
+        */
+
+        @keyframes rotate_aword {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(1850deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="zhuanpan" class="container">
+        <!--<div class="selects">-->
+            <!--<span>奖品数量：</span>-->
+            <!--<select v-model="awordNum" @change="changeCount">-->
+                <!--<option @change="changeCount" v-for="item in counts">{{ item.count }}</option>-->
+            <!--</select>-->
+            <!--<span>是否中奖：</span>-->
+            <!--<select v-model="currentAwordNum">-->
+                <!--<option v-bind:disabled="items.value > awordNum" v-for="items in awords" v-bind:value="items.value">{{ items.count }}</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <div class="t_center">
+            <img class="img_title" src="../public/image/zhuanpan_02/title.png" alt="">
+        </div>
+        <div id="content" class="out_box">
+            <div class="zhuanpan_1 pos_abs" v-bind:class="{ anim_light: animAword }">
+                <img class="size100" src="../public/image/zhuanpan_02/zhuanpan1.png" alt="">
+            </div>
+            <div class="zhuanpan_2 pos_abs aword_zhuanpan" v-bind:class="{ anim_aword: animAword }">
+                <img class="size100" v-bind:src="awordBg">
+            </div>
+            <div class="start_btn pos_abs" @click="start">
+                <img class="size100" src="../public/image/zhuanpan_02/start.png" alt="">
+            </div>
+        </div>
+        <div class="t_center t_white ">
+            <p class="t_08rem">已有
+                <span class="t_yellow">{{joinNum}}</span>
+                人参与</p>
+            <p class="t_08rem">您今天还有
+                <span class="t_yellow">{{chanceNum}}</span>
+                次抽奖机会</p>
+        </div>
+        <div class="bottom_btns">
+            <div>我要创建活动</div>
+            <div>活动详情</div>
+        </div>
+        <footer class="t_center">
+            <span>页面技术由活动聚提供</span>
+        </footer>
+    </div>
+
+<script>
+    function testWxSdk() {
+        wx.miniProgram.navigateTo({url: '/pages/index/index'})
+    }
+</script>
+<script src="../public/js/zhuanpan.js"></script>
+</body>
+</html>

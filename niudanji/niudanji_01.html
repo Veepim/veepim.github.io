@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>扭蛋机</title>
+		<link rel="stylesheet" href="../public/css/niudanji_01.css" />
+	</head>
+
+	<body>
+		<section class="ndj-container" id="app">
+			<div class="ndj-bg">
+				<div style="height: 5%;">
+					<img src="../public/image/niudanji_01/eggBeater-img1-20180627.png" />
+				</div>
+				<div class="ndj-decoration1">
+					<img src="../public/image/niudanji_01/eggBeater-img2-20180627.png" />
+				</div>
+				<div class="ndj-decoration2">
+					<img src="../public/image/niudanji_01/eggBeater-img3-20180627.png"></img>
+				</div>
+				<div class="ndj-decoration3">
+					<img src="../public/image/niudanji_01/eggBeater-img4-20180627.png" />
+				</div>
+				<div class="ndj-decoration4">
+					<img src="../public/image/niudanji_01/eggBeater-img5-20180627.png" />
+				</div>
+				<div class="ndj-main">
+					<div class="ndj-main1">
+						<img src="../public/image/niudanji_01/eggBeater-main1-20180627.png" />
+						<div class="ndj-mainText">
+							<p>活动详情</p>
+						</div>
+						<div class="ndj-mainBall" v-for="(ball, idx) in data" :key="idx">
+							<img :src="ball.imgUrl" alt="" :style="ball.style">
+						</div>
+						<div class="ndj-splitBall">
+							<img src="../public/image/niudanji_01/eggBeater-ball12-20180627.png" v-show="isSplit" />
+							<img src="../public/image/niudanji_01/eggBeater-light2-20180627.png" class="ndj-ballLight2" v-show="isSplit" />
+							<img src="../public/image/niudanji_01/eggBeater-ball13-20180627.png" v-bind:class="{ 'ndj-splitHalfBall': isSplit }" v-show="isSplit" />
+						</div>
+					</div>
+					<div class="ndj-main2">
+						<img src="../public/image/niudanji_01/eggBeater-main2-20180627.png" />
+						<div v-bind:class="{ 'ndj-outBall': isOut }" v-show="isOut">
+							<img src="../public/image/niudanji_01/eggBeater-ballLager-20180627.png" style="z-index: 2;position: relative;" class="ndj-ballShake" />
+							<img src="../public/image/niudanji_01/eggBeater-ballLight2-20180627.png" v-bind:class="{ 'ndj-ballLight': isLight }" v-show="isLight" />
+						</div>
+
+						<div class="ndj-mainRunButton" @click="runBall()">
+							<img src="../public/image/niudanji_01/eggBeater-runButton-20180627.png" />
+						</div>
+						<div class="ndj-mainInviteButton">
+							<img src="../public/image/niudanji_01/eggBeater-button-20180627.png" />
+						</div>
+					</div>
+
+				</div>
+				<div class="ndj-footer">
+					<p>页面技术由&ensp;活动聚&ensp;提供</p>
+				</div>
+				<div class="ndj1-mask-bg" v-show="isSplit">
+
+				</div>
+			</div>
+		</section>
+		<script src="../public/plugin/vue.min.js"></script>
+		<script src="../public/js/niudanji_01.js"></script>
+	</body>
+
+</html>

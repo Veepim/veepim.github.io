@@ -1,0 +1,85 @@
+.container{
+    background-image: url("../image/yaoyiyao_02/background.png");
+    background-size: 100% 100%;
+    padding-top: 20% !important;
+}
+.phone_box{
+    width: 6rem;
+    height: 6rem;
+    margin-top: .8rem;
+    position: relative;
+}
+.bottom_btn{
+    padding-top: .6rem;
+    width: 100%;
+}
+.bottom_btn>button{
+    width: 60%;
+    height: .8rem;
+    background-image: url("../image/yaoyiyao_02/btn.png");
+    background-size: 100% 100%;
+    color: #7E5418;
+}
+.circle{
+    width: 60%;
+    bottom: 0;
+    left: 20%;
+}
+.phone{
+    width: 68%;
+    bottom: 5px;
+    left: 20%;
+    z-index: 2;
+}
+.left_icon{
+    left: .2rem;
+    bottom: 1.3rem;
+    width: .6rem;
+}
+.right_icon{
+    right: -.2rem;
+    width: .6rem;
+    top: 1.3rem;
+}
+
+.anim_phone{
+    animation: ani_phone .5s linear 3;
+    transform-origin: 40% 100%;
+}
+.anim_shake{
+    animation: ani_shake .2s linear 8;
+}
+@keyframes ani_shake {
+    0%{
+        transform: translate(0,0);
+    }
+    25%{
+        transform: translate(3px,0);
+    }
+    50%{
+        transform: translate(0,0);
+    }
+    75%{
+        transform: translate(-3px,0);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+@keyframes ani_phone {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}

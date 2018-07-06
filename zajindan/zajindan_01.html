@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>砸金蛋</title>
+		<link rel="stylesheet" href="../public/css/zajindan_01.css">
+	</head>
+
+	<body>
+		<section class="zjd-container" id="app">
+			<div class="zjd-bg">
+				<div class="zjd-decoration1">
+					<img src="../public/image/zajindan_01/goldenEgg-dec2-2018062.png" style="z-index: 2;position: relative;" />
+					<div class="zjd-decoration2">
+						<img src="../public/image/zajindan_01/goldenEgg-dec3-2018062.png" />
+					</div>
+					<div class="zjd-decoration3">
+						<img src="../public/image/zajindan_01/goldenEgg-dec4-2018062.png" style="z-index: 3;position: relative;" />
+					</div>
+					<div class="zjd-header">
+						<p style="z-index: 3;position: relative;">页面技术由&ensp;活动聚&ensp;提供</p>
+					</div>
+				</div>
+				<div class="zjd-decoration4">
+					<img src="../public/image/zajindan_01/goldenEgg-dec9-2018062.png" />
+					<div class="zjd-decoration5">
+						<img src="../public/image/zajindan_01/goldenEgg-dec7-2018062.png" />
+						<div class="zjd-decoration7">
+							<img src="../public/image/zajindan_01/goldenEgg-img1-2018062.png" class="zjd-egg" @click="hitEgg" v-bind:class="{'zjd-egg':isEggComplete, 'zjd-eggAfter': isEggHited}" v-show="isAllEgg" />
+							<img src="../public/image/zajindan_01/goldenEgg-img2-2018062.png" v-show="isSplitEgg" v-bind:class="{'zjd-eggAfter': isEggHited}" />
+						</div>
+						<div class="zjd-brokenEgg1" v-show="isBrokenEgg">
+							<img src="../public/image/zajindan_01/goldenEgg-img4-2018062.png" />
+							<div class="zjd-brokenEgg2">
+								<img src="../public/image/zajindan_01/goldenEgg-img3-2018062.png" />
+							</div>
+							<div class="zjd-brokenEgg3">
+								<img src="../public/image/zajindan_01/goldenEgg-dec1-2018062.png" />
+							</div>
+						</div>
+						<div class="zjd-hammerHit" :class="{'zjd-hammerHit':isHammerBegin,'zjd-hammerHitAfter':isHammerOver}">
+							<img src="../public/image/zajindan_01/goldenEgg-hammer-2018062.png" />
+						</div>
+					</div>
+					<div class="zjd-decoration6">
+						<img src="../public/image/zajindan_01/goldenEgg-dec6-2018062.png" />
+					</div>
+					<div class="zjd-decoration8">
+						<img src="../public/image/zajindan_01/goldenEgg-dec5-2018062.png" />
+						<div class="zjd-decoration9">
+							<p>我也要发起抽奖</p>
+						</div>
+					</div>
+					<div class="zjd-decoration10">
+						<p>已有33423人参与，您今天还有{{lotteryNum}}次机会</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script type="text/javascript" src="../public/plugin/vue.min.js"></script>
+	</body>
+	<script>
+		new Vue({
+			el: "#app",
+			data: {
+				isEggComplete: true,
+				isEggHited: false,
+				isHammerBegin: true,
+				isHammerOver: false,
+				isAllEgg: true,
+				isSplitEgg: false,
+				isBrokenEgg: false,
+				lotteryNum: 3,
+			},
+			mounted() {
+
+			},
+			methods: {
+				hitEgg() {
+					this.checkLotteryNum();
+					this.isEggComplete = false;
+					this.isEggHited = true;
+					this.isHammerBegin = false;
+					this.isHammerOver = true;
+					setTimeout(this.eggSplit, 1000);
+				},
+				eggSplit() {
+					this.isAllEgg = false;
+					this.isSplitEgg = true;
+					this.isEggHited = true;
+					setTimeout(this.eggBroken, 1000);
+				},
+				eggBroken() {
+					this.isBrokenEgg = true;
+					this.isAllEgg = false;
+					this.isSplitEgg = false;
+				},
+				checkLotteryNum() {
+					if(this.lotteryNum <= 0) {
+						this.lotteryNum = 0;
+						alert("您没有抽奖次数了~下次再来吧");
+
+					}
+					this.lotteryNum--;
+				},
+			},
+
+		})
+	</script>
+
+</html>

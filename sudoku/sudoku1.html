@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../public/css/sudoku1.css"/>
+		<script src="../public/js/font.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/plugin/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<section class="sudoku" id="app">
+			<img src="../public/image/sudoku/su-bg.png" class="su-bg"/>
+			<section class="su-main">
+				<section class="su-m-title">
+					<img src="../public/image/sudoku/su-title.png" alt="" />
+					<section>你今天还有 {{btnClickNum}} 次抽奖机会</section>
+				</section>
+				<section class="su-m-cont">
+					<img :src="lightEffect?'../public/image/sudoku/su-m-light1.png':'../public/image/sudoku/su-m-light2.png'"/>
+					<section class="su-mc-cj">
+						<ul>
+							<li class="option" data-sort="1" data-prize-id="8">
+								<img :src="aniIndex == '0'?'../public/image/sudoku/su-m-tab2.png':'../public/image/sudoku/su-m-tab1.png'"/>
+								<section class="su-mcc-cont">
+									<img src="../public/image/sudoku/su-cont.png"/>
+									<p>8</p>
+								</section>
+							</li>
+							<li class="option" data-sort="2" data-prize-id="2">
+								<img :src="aniIndex == '1'?'../public/image/sudoku/su-m-tab2.png':'../public/image/sudoku/su-m-tab1.png'"/>
+								<section class="su-mcc-cont">
+									<img src="../public/image/sudoku/su-cont.png"/>
+									<p>2</p>
+								</section>
+							</li>
+							<li class="option" data-sort="3" data-prize-id="3">
+								<img :src="aniIndex == '2'?'../public/image/sudoku/su-m-tab2.png':'../public/image/sudoku/su-m-tab1.png'"/>
+								<section class="su-mcc-cont">
+									<img src="../public/image/sudoku/su-cont.png"/>
+									<p>3</p>
+								</section>
+							</li>
+							<li class="option" data-sort="8" data-prize-id="4">
+								<img :src="aniIndex == '7'?'../public/image/sudoku/su-m-tab2.png':'../public/image/sudoku/su-m-tab1.png'"/>
+								<section class="su-mcc-cont">
+									<img src="../public/image/sudoku/su-cont.png"/>
+									<p>4</p>
+								</section>
+							</li>
+							<li id="option-btn" v-on:click='start'>
+								<img :src="btnEffect?'../public/image/sudoku/su-btn1.png':'../public/image/sudoku/su-btn2.png'"/>
+							</li>
+							<li class="option" data-sort="4" data-prize-id="5">
+								<img :src="aniIndex == '3'?'../public/image/sudoku/su-m-tab2.png':'../public/image/sudoku/su-m-tab1.png'"/>
+								<section class="su-mcc-cont">
+									<img src="../public/image/sudoku/su-cont.png"/>
+									<p>5</p>
+								</section>
+							</li>
+							<li class="option" data-sort="7" data-prize-id="1">
+								<img :src="aniIndex == '6'?'../public/image/sudoku/su-m-tab2.png':'../public/image/sudoku/su-m-tab1.png'"/>
+								<section class="su-mcc-cont">
+									<img src="../public/image/sudoku/su-cont.png"/>
+									<p>1</p>
+								</section>
+							</li>
+							<li class="option" data-sort="6" data-prize-id="7">
+								<img :src="aniIndex == '5'?'../public/image/sudoku/su-m-tab2.png':'../public/image/sudoku/su-m-tab1.png'"/>
+								<section class="su-mcc-cont">
+									<img src="../public/image/sudoku/su-cont.png"/>
+									<p>7</p>
+								</section>
+							</li>
+							<li class="option" data-sort="5" data-prize-id="6">
+								<img :src="aniIndex == '4'?'../public/image/sudoku/su-m-tab2.png':'../public/image/sudoku/su-m-tab1.png'"/>
+								<section class="su-mcc-cont">
+									<img src="../public/image/sudoku/su-cont.png"/>
+									<p>6</p>
+								</section>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section class="su-m-foot">
+					<section class="su-mf-number">已有<strong>2315</strong>人参与</section>
+					<section class="su-mf-btn">我要创建活动</section>
+					<img src="../public/image/sudoku/su-active.png" class="su-mf-detail"/>
+				</section>
+			</section>
+			<section class="lb-bottom">
+				页面技术由 活动聚 提供
+			</section>
+		</section>
+	</body>
+</html>
+<script type="text/javascript">
+	var prizeId = 5;
+</script>
+<script src="../public/js/sudoku1.js" type="text/javascript" charset="utf-8"></script>
